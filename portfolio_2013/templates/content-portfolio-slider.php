@@ -3,7 +3,7 @@
 	<div id="portfolio_page_title">
 	
 		<ul id="myTab" class="portfolio_menu">
-			<li id="mainpage_li" class="active"><a href="#mainpage" data-toggle="tab"><</a></li>
+			<li id="mainpage_li" class="active"><a href="#mainpage" data-toggle="tab">&lt;</a></li>
 			<li id="profile_li"><a href="#profile" data-toggle="tab">ALEX</a></li>
 			<li id="works_li"><a href="#portfolio0" data-toggle="tab">WORKS</a></li>	
 					<li class="portfolio_submenu portfolio1"><a href="#portfolio1" data-toggle="tab">WEB</a></li>
@@ -18,25 +18,69 @@
 	<section id="mainpage" class="tab-pane fade active in">
    		<div class="row"> 
 		<div class="featured-image-box span12">
-	
-			<?php 
-			 $the_query = new WP_Query(array(
-			 'post_type' => 'portfolio',
-			 'posts_per_page' => 1 
-			  )); 
-			 while ( $the_query->have_posts() ) : 
-			 $the_query->the_post();
-			 ?>
 							      
-		     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
-				<div class="front_titlebox">
-				<p class="front_title"><strong>Latest Work: </strong><?php the_title(); ?> <span class="front_year"> /<?php the_time('Y'); ?></span></p>
-				</div>			
+           <div id="myCarousel-auto" class="carousel carousel-fade slide page_banner_imgbox">
 
-			  <?php 
-			   endwhile; 
-			   wp_reset_postdata();
-			  ?>
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel-auto" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel-auto" data-slide-to="1"></li>
+                            <li data-target="#myCarousel-auto" data-slide-to="2"></li>
+                            <li data-target="#myCarousel-auto" data-slide-to="3"></li>
+                        </ol>
+
+             <div class="carousel-inner">
+   
+				<?php 
+				$the_query = new WP_Query(array(
+				'post_type' => 'portfolio',
+				'posts_per_page' => 1 
+				)); 
+				while ( $the_query->have_posts() ) : 
+				$the_query->the_post();
+				?>
+              
+                <div class="item active">
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+				    <div class="front_titlebox">
+				    <p class="front_title"><?php the_title(); ?> <span class="front_year"> /<?php the_time('Y'); ?></span></p>
+				    </div>	
+                </div><!-- item active -->
+               
+                <?php 
+                endwhile; 
+                wp_reset_postdata();
+                ?>
+                
+                <?php 
+				$the_query = new WP_Query(array(
+				'post_type' => 'portfolio', 
+				'posts_per_page' => 3, 
+				'offset' => 1
+				)); 
+				while ( $the_query->have_posts() ) : 
+				$the_query->the_post();
+				?>
+              
+                <div class="item">
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+				    <div class="front_titlebox">
+				    <p class="front_title"><?php the_title(); ?> <span class="front_year"> /<?php the_time('Y'); ?></span></p>
+				    </div>	
+                </div><!-- item active -->
+               
+              <?php 
+               endwhile; 
+               wp_reset_postdata();
+              ?>
+              
+             </div><!-- carousel-inner -->
+                    <div class="control-box">       
+                        <a class="left carousel-control" href="#myCarousel-auto" data-slide="prev"><i class="icon-chevron-left"></i></a>
+                        <a class="right carousel-control" href="#myCarousel-auto" data-slide="next"><i class="icon-chevron-right"></i></a>        
+                    </div><!-- /.control-box -->             
+             
+           </div><!-- #myCarousel -->
 							  
 		</div><!-- #featured-image-box-->
 		</div>

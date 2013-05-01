@@ -29,8 +29,16 @@
 
 			  <div class="row">    
 			  
-			  <div class="subnav">
-			    <div class="span3 portfolio-info">
+			    
+			    
+                <div class="span9">
+				    <div class="entry-content row-fluid">
+				      <?php the_content(); ?>
+				    </div>
+				</div><!-- /.span9 END -->
+                
+                <div class="subnav">
+			      <div class="span3 portfolio-info">
 				    <div class="listbox">
 				    
 					    <header><h1 class="entry-title"><?php the_title(); ?></h1></header>
@@ -60,13 +68,6 @@
 					</div>
 				</div><!-- /.span3 END -->
 			  </div>
-			    
-			    
-			    <div class="span9">
-				    <div class="entry-content row-fluid">
-				      <?php the_content(); ?>
-				    </div>
-				</div><!-- /.span9 END -->
 			    	   
 			  </div><!-- /.row -->
 			    
