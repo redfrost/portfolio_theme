@@ -174,7 +174,7 @@ body {
 .entry-tags a, 
 .carousel-control, 
 .fade_hover, 
-.blogroll li a,
+.sns_link li a,
 #menu-footer a,
 .brand { 
   -webkit-transition: all 200ms ease;
@@ -330,7 +330,7 @@ line-height: 1.84615;
 #mainpage_li a {
     color: #666;
     font-size: 48px; font-size: 3rem;
-    font-weight: bold;
+    font-weight: 300;
     margin-right: 40px;
     margin-top: 17px;
 }
@@ -350,9 +350,14 @@ line-height: 1.84615;
     list-style: none;
 }
 .portfolio_menu li { display: inline-block; }
-#profile_li a { color: #000; }
-#works_li a { color: #ccc; }
-
+#profile_li a { 
+    color: #000; 
+    font-weight: 300;
+    }
+#works_li a {
+    color: #CCCCCC;
+    font-weight: 300;
+}
 
 .portfolio_submenu {
   font-size: 20px; font-size:1.2rem;
@@ -643,14 +648,14 @@ div.pagination {
 
 /* Footer menu and SNS links */
 #content-info, #content-info section { padding: 0px 0 0px; }
-#menu-footer li, .blogroll li {
+#menu-footer li, .sns_link li {
     display: inline-block; /* use inline-block for IE8 */
     display: inline !ie; /* IE6 7 */
     line-height: 20px;
     list-style: none outside none;
     margin: 0 2px 0 0;
 }
-    #menu-footer, #menu-footer li:last-child, .blogroll li:last-child { margin:0; }
+    #menu-footer, #menu-footer li:last-child, .sns_link li:last-child { margin:0; }
 
 
 
@@ -695,30 +700,23 @@ div.pagination {
 ============================================================================= */
 
 /* SNS Links */
-.blogroll li, .blogroll li a img {
+.sns_link li, .sns_link li a img {
     width: 25px;
     height: 25px;
 }
- .blogroll li a { opacity: 1; }
- .blogroll li a:hover { font-style: none; opacity: 0.7;  }
- 
 
-.widget_links {
+.sns_link li a { color: #333; font-size: 20px; font-size: 1.25rem; opacity: 0.5; }
+.sns_link li a:hover { opacity: 1; }
+.sns_link li a:active { text-decoration: none; margin-top:2px; }
+
+.sns_link {
     float: right;
     height: 30px;
     margin: -20px 0 0;
     position: relative;
 }
-	/* Firefox Fix */
-	@-moz-document url-prefix() { 
-	  .widget_links {
-	     
-	  }
-	}
 
-ul.xoxo { margin: 0px; }
-		  
-section.widget_links .widget-inner h3 { display:none; }
+section.widget_links .widget-inner h3, .sns_link strong { display:none; }
 
 
 
@@ -886,6 +884,56 @@ min-height: 540px;
   z-index: 1;
 }
 
+/* Carousel Control */
+.carousel-control {
+    top: 45%;
+    font-size: 48px;
+    border: 0;
+    background: none;
+} 
+
+.carousel-control, .carousel-indicators li {
+    -webkit-transition: all 250ms ease;
+	 -moz-transition: all 250ms ease;
+	  -ms-transition: all 250ms ease;
+	   -o-transition: all 250ms ease;
+	      transition: all 250ms ease;   
+} 
+
+.carousel-indicators {
+    bottom: 10px;
+    margin: 0;
+    left: 45%;
+}
+
+.carousel-indicators li {
+    background: #EEEEEE;
+    border-radius: 5px 5px 5px 5px;
+    height: 8px;
+    margin: 0 2px;
+    width: 8px;
+}
+.carousel-indicators .active {
+    background-color: #CCCCCC;
+}
+
+
+@media (min-width: 1025px) { 
+    #myCarousel-auto .control-box { 
+    opacity: 0;       
+    -webkit-transition: all 250ms ease;
+	 -moz-transition: all 250ms ease;
+	  -ms-transition: all 250ms ease;
+	   -o-transition: all 250ms ease;
+	      transition: all 250ms ease; }/* hardware acceleration will cause Bootstrap carousel controlbox margin error in webkit browsers */
+    #myCarousel-auto:hover .control-box { opacity: 1; }
+    .carousel-control.left { left: 0; background-image: none;}
+    .carousel-control.right { right: 0; background-image: none; }
+    #myCarousel-auto:hover .carousel-control.left { left: 15px; }
+    #myCarousel-auto:hover .carousel-control.right { right: 15px; }    
+}
+
+
 
 
 
@@ -999,21 +1047,25 @@ line-height: 2.13rem !important;
 
 /* Fixed Submenu
 **************************************************************/
-@media screen and (min-width: 1280px){
+
+.subnav {
+	    margin-left: 738px;
+	    position: absolute;
+}
+.subnav.affix {
+	    margin-left: 738px;
+}
+
+@media (min-width: 1280px) {
 	body { position: relative; }
 	
 	.single .span9 {
-	    margin-left: 272px;
 	    position: relative;
 	    min-height: 700px;    
 	}
 	
-	.subnav {
-	    position: absolute;
-	}
-	
-	
 	.subnav.affix {
+	    margin-left: 738px;
 	    position: fixed;
 	    top: 30px;
 	    bottom: auto;
@@ -1028,13 +1080,19 @@ line-height: 2.13rem !important;
 }
 
 @media (min-width: 1600px) {
-.single .span9 {
-    margin-left: 330px;
-    position: relative;
+    .single .span9 {
+        position: relative;
     }
+    
+    .subnav {
+	    margin-left: 900px;
+	    position: absolute;
+	}
+	
     .subnav.affix {
-    bottom: auto;
-    position: fixed;
-    top: 65px;
-}
+        margin-left: 900px;
+        bottom: auto;
+        position: fixed;
+        top: 65px;
+    }
 }
