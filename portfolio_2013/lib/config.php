@@ -72,6 +72,7 @@ function roots_sidebar_class() {
 // Configuration values
 define('GOOGLE_ANALYTICS_ID', 'UA-36497213-1'); // UA-XXXXX-Y
 define('POST_EXCERPT_LENGTH', 40);
+define('SYSTEM_VERSION', 1.1);
 
 /**
 * $content_width is a global variable used by WordPress for max image upload sizes and media embeds (in pixels)
@@ -83,3 +84,5 @@ define('POST_EXCERPT_LENGTH', 40);
 * This is not required or used by Roots.
 */
 if (!isset($content_width)) { $content_width = 0; }
+
+

@@ -1,7 +1,7 @@
 <footer id="content-info" class="container" role="contentinfo">
   <?php dynamic_sidebar('sidebar-footer'); ?>
-  <p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
-    
+  <a rel="popover" data-placement="top" title="System Version: <?php echo SYSTEM_VERSION; ?>" class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></a>
+        
 
 </footer>
   
