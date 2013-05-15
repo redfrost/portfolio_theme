@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600);
+
+
 /*  *****************************************************************************
     * BASIC STYLES																*
     *****************************************************************************	
@@ -125,7 +128,7 @@ div { word-wrap:break-word;}
 ----------------------------------------- */
 
 html { 
-  background:; 
+  background: #333; 
   } 
 
 #wrap {
@@ -133,13 +136,13 @@ html {
 }
 
 body {
-    margin: auto;
+    margin: 0 auto 120px;
     padding-top: 45px;
     overflow-y: ;
     background-image: url("http://simonalex.com/portfolio/assets/bg.jpg");
-
     padding-bottom: 20px;
     /* width: 1060px; box-shadow: 0 1px 3px #666666; */
+    box-shadow: 0 4px 6px #000000;
 }
 
 
@@ -200,7 +203,7 @@ body {
    ============================================================================= */
    
 .navbar, .brand, h1, h2, h3, h4, h5, h6, body, p, .btn {
-  font-family: 'BentonSans',"Open Sans", "Helvetica Neue", "Helvetica", Arial, "Apple SD Gothic Neo", 나눔고딕, NanumGothic,'Malgun Gothic', Applegothic; sans-serif; }
+  font-family: 'Titillium Web','BentonSans',"Open Sans", "Helvetica Neue", "Helvetica", Arial, "Apple SD Gothic Neo", 나눔고딕, NanumGothic,'Malgun Gothic', Applegothic; sans-serif; }
 
 
 /* Font Size */
@@ -254,7 +257,7 @@ font-weight: 300;
 line-height: 1.84615;
 }
 
-		
+	/*	
 		@font-face {
 				font-family: 'BentonSans';
 				src: url('http://simonalex.com/asset/font/bentonsans/bentonsanslight.eot');
@@ -287,6 +290,7 @@ line-height: 1.84615;
 				font-weight: 600;
 				font-style: normal;
 		}		
+		*/
 
  /* Additional Font Style */
 .pen, .pen p { 
@@ -341,7 +345,7 @@ line-height: 1.84615;
 	  }
 	}
 
-#mainpage.active .featured-image-box { margin-top: -630px; position: absolute; display: inline-block; float: left; opacity: 1; }
+#mainpage.active .featured-image-box { margin-top: -640px; position: absolute; display: inline-block; float: left; opacity: 1; }
 #mainpage .featured-image-box { opacity: 0px; }
 .portfolio_menu {
     font-size: 48px; font-size: 3rem;
@@ -369,7 +373,7 @@ line-height: 1.84615;
 }
 
 #profile_li {
-    margin-left: -35px;
+    margin-left: -32px;
     margin-right: 10px;
 }
 
@@ -468,7 +472,7 @@ line-height: 1.84615;
      margin: 10px 0px;
      text-transform: uppercase;
 }
-#portfolio_custom .portfolio .listbox h2 a { color: #333; }
+#portfolio_custom .portfolio .listbox h2 a { color: #333; font-weight: 600;}
 
 
 #portfolio_custom .portfolio .updated {
@@ -513,6 +517,7 @@ opacity: 0.6;
     float: left;
     font-size: 0.75rem;
     padding: 3px 10px 0;
+    display: none;
 }
 
 .listbox p {
@@ -653,7 +658,7 @@ div.pagination {
     display: inline !ie; /* IE6 7 */
     line-height: 20px;
     list-style: none outside none;
-    margin: 0 2px 0 0;
+    margin: 0 5px 0 0;
 }
     #menu-footer, #menu-footer li:last-child, .sns_link li:last-child { margin:0; }
 
@@ -671,12 +676,10 @@ div.pagination {
 
 
 /* copyright */
-#content-info p { 
-  display:block; 
-  float: left; 
-  margin: -30px 0 0px 0; 
-  width: 100%; 
-  color: #999;
+#content-info a {
+    color: #999999;
+    float: left;
+    margin: -20px 0 0;
 }
 
 .footer_text { 
@@ -687,7 +690,19 @@ div.pagination {
 }
 
 	
+/* Footer note */
+#footer_note {
+    position: absolute;
+    margin-top: 60px;
+    color: #666;
+    font-size: 22px;
+}
 
+#footer_note i {
+    margin-right: 4px;
+}	
+
+.creator { font-size: 14px; }
 
 /* =============================================================================
    7. SIDEBAR
@@ -701,8 +716,8 @@ div.pagination {
 
 /* SNS Links */
 .sns_link li, .sns_link li a img {
-    width: 25px;
     height: 25px;
+    padding: 0 0 0 10px;
 }
 
 .sns_link li a { color: #333; font-size: 20px; font-size: 1.25rem; opacity: 0.5; }
@@ -712,7 +727,7 @@ div.pagination {
 .sns_link {
     float: right;
     height: 30px;
-    margin: -20px 0 0;
+    margin: -5px 0 0;
     position: relative;
 }
 
@@ -979,7 +994,7 @@ html {
     margin-top: 36px;
 	}
 #mainpage.active .featured-image-box {
-    margin-top: -780px;
+    margin-top: -790px;
 	}
 #quote {
     margin: 12px 0 0 140px;
@@ -1067,7 +1082,7 @@ line-height: 2.13rem !important;
 	.subnav.affix {
 	    margin-left: 738px;
 	    position: fixed;
-	    top: 30px;
+	    top: 40px;
 	    bottom: auto;
 	}
 	

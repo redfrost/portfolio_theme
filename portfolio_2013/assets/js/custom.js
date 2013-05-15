@@ -58,7 +58,7 @@ $("nav select").change(function()
 		$('.subnav').affix({
 			offset: {
 			top: 45, 
-			bottom: 800
+			bottom: 900
 				}
 			})
 		});

@@ -19,7 +19,7 @@
    		<div class="row"> 
 		<div class="featured-image-box span12">
 							      
-           <?php echo get_new_royalslider(1); ?>
+           <? echo get_new_royalslider(1); ?><!-- Install Royal slider. If the slider is not visible try save setting again -->
 							  
 		</div><!-- #featured-image-box-->
 		</div>
